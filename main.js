@@ -30,10 +30,16 @@ function arrNumber(){
   let result4 = 0;
   let result5 = 0;
   let result6 = 0;
+  let result7 = 0;
+  let positiveArray =[];
+  let negativeArray =[];
   for (let i = 0; i < numbers3.length; i++) {
     const value = numbers3[i];
     const numb = numbers3.sort(numSort);
+    
     if (value > 0) {
+      positiveArray.push(value);
+      result6 = positiveArray
       result1++;
       result2 += value;
       result3 = numb[0];
@@ -41,14 +47,27 @@ function arrNumber(){
       if (numb >= 1) {
         result4 = numb;
       }
-      document.getElementById("result1").innerHTML = result1;
-      document.getElementById("result2").innerHTML = result2;
-      document.getElementById("result3").innerHTML = result3;
-      document.getElementById("result4").innerHTML = result4;
-      document.getElementById("result5").innerHTML = result5;
-      document.getElementById("result6").innerHTML = result6;
+     
     }
+    else if (value < 0){
+        negativeArray.push(value);
+        result7 = negativeArray
+    }
+    if(positiveArray.length > negativeArray){
+        document.getElementById("result8").innerHTML = " số dương nhiều hơn"
+    }else{
+        document.getElementById("result8").innerHTML = " số âm nhiều hơn"
+    }
+
   }
+  
+  document.getElementById("result7").innerHTML = result7;
+  document.getElementById("result1").innerHTML = result1;
+  document.getElementById("result2").innerHTML = result2;
+  document.getElementById("result3").innerHTML = result3;
+  document.getElementById("result4").innerHTML = result4;
+  document.getElementById("result5").innerHTML = result5;
+  document.getElementById("result6").innerHTML = result6;
   function numSort(a, b) {
     return a - b;
   }
