@@ -12,17 +12,27 @@ document.getElementById("numberEl").addEventListener("click", arrayNumb);
 function arrayNumb() {
   const number = +document.getElementById("number").value;
   numbers1.push(number);
-
   document.getElementById("arrayEl").innerHTML = numbers1;
-  let result1 = 0;
+}
+document.getElementById("numberEl3").addEventListener("click", arrCon);
+function arrCon(){
+    const arrConc = numbers1.concat(numbers2);
+    document.getElementById("arrayEl3").innerHTML = arrConc;
+}
+document.getElementById("numberElbt").addEventListener("click", arrNumber);
+function arrNumber(){
+    const number3 = +document.getElementById("ipNum").value;
+    numbers3.push(number3);
+    document.getElementById("arrayEl4").innerHTML = numbers3;
+    let result1 = 0;
   let result2 = 0;
   let result3 = 0;
   let result4 = 0;
   let result5 = 0;
   let result6 = 0;
-  for (let i = 0; i < numbers1.length; i++) {
-    const value = numbers1[i];
-    const numb = numbers1.sort(numSort);
+  for (let i = 0; i < numbers3.length; i++) {
+    const value = numbers3[i];
+    const numb = numbers3.sort(numSort);
     if (value > 0) {
       result1++;
       result2 += value;
@@ -39,17 +49,7 @@ function arrayNumb() {
       document.getElementById("result6").innerHTML = result6;
     }
   }
-
   function numSort(a, b) {
     return a - b;
   }
-}
-document.getElementById("numberEl3").addEventListener("click", arrCon);
-function arrCon(){
-    const arrConc = numbers1.concat(numbers2);
-    document.getElementById("arrayEl3").innerHTML = arrConc;
-}
-document.getElementById("numberElbt").addEventListener("click", arrNumber);
-function arrNumber(){
-    const number3 = +document.getElementById("ipNum").value
 }
