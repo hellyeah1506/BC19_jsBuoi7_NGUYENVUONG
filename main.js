@@ -44,19 +44,17 @@ function arrNumber(){
       result2 += value;
       result3 = numb[0];
       result5 = numb;
-      if (numb >= 1) {
-        result4 = numb;
-      }
-     
     }
-    else if (value < 0){
+    if (value < 0){
         negativeArray.push(value);
         result7 = negativeArray
     }
-    if(positiveArray.length > negativeArray){
+    if(positiveArray.length > negativeArray.length){
         document.getElementById("result8").innerHTML = " số dương nhiều hơn"
-    }else{
+    }else if(positiveArray.length < negativeArray.length){
         document.getElementById("result8").innerHTML = " số âm nhiều hơn"
+    }else if(positiveArray.length === negativeArray.length){
+        document.getElementById("result8").innerHTML = " bằng nhau"
     }
 
   }
